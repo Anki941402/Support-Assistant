@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Support Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .signin-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 1.1rem;
+        }
+        input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: white;
+        }
+        input::placeholder {
+            color: #999;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .link {
+            text-align: center;
+        }
+        .link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .link a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .divider {
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e1e5e9;
+        }
+        .divider span {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 15px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 480px) {
+            .signin-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <div class="logo">
+            <i class="fas fa-headset"></i>
+        </div>
+        <h2>Welcome Back</h2>
+        <form action="/signin" method="post">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+        </form>
+        <div class="divider">
+            <span>or</span>
+        </div>
+        <div class="link">
+            <a href="/">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>
