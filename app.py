@@ -47,9 +47,6 @@ COMMON_QA = {
     "what is binge watching": "Binge watching is the practice of watching multiple episodes of a television program or web series in rapid succession.",
 }
 
-# Configure Google Generative AI
-genai.configure(api_key="AIzaSyAlxTOgXPKi3VyUjocUtR3k8gU-FZudDy0")
-
 def find_faq_match(query):
     query_lower = query.lower()
     for question, answer in FAQS.items():
@@ -118,3 +115,4 @@ def signin():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
